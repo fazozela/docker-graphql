@@ -38,7 +38,7 @@ jobs:
 
     - name: Build Docker Image
       env:
-        NEW_VERSION: ${{steps.version.outputs}}
+        NEW_VERSION: ${{steps.version.outputs.version}}
       run: |
         echo "Iniciando build de la imagen"
         docker build -t fazozeladocker/docker-graphql:$NEW_VERSION .
