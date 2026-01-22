@@ -37,7 +37,8 @@ jobs:
         echo "New version: $NEW_VERSION!!!"
 
     - name: Build Docker Image
-      NEW_VERSION: ${{steps.version.outputs}}
+      env:
+        NEW_VERSION: ${{steps.version.outputs}}
       run: |
         echo "Iniciando build de la imagen"
         docker build -t fazozeladocker/docker-graphql:$NEW_VERSION .
@@ -45,7 +46,8 @@ jobs:
         echo "Fin del build de la imagen"
 
     - name: Push Docker Image
-      NEW_VERSION: ${{steps.version.outputs}}  
+      env:
+        NEW_VERSION: ${{steps.version.outputs}}  
       run: |
         echo "Iniciando push de la imagen"
         docker push fazozeladocker/docker-graphql:$NEW_VERSION
