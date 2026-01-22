@@ -47,7 +47,7 @@ jobs:
 
     - name: Push Docker Image
       env:
-        NEW_VERSION: ${{steps.version.outputs}}  
+        NEW_VERSION: ${{steps.version.outputs.version}}  
       run: |
         echo "Iniciando push de la imagen"
         docker push fazozeladocker/docker-graphql:$NEW_VERSION
