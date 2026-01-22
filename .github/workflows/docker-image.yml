@@ -36,7 +36,7 @@ jobs:
     - name: Push Docker Image
       run: |
         echo "Iniciando push de la imagen"
-        docker push fazozeladocker/docker-graphql:0.0.2
+        docker push fazozeladocker/docker-graphql:0.0.1
         echo "Fin del push de la imagen"        
     # - name: Build the Docker image
       # run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
